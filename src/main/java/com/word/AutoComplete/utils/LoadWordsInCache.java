@@ -1,8 +1,10 @@
 package com.word.AutoComplete.utils;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.ServletContext;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +14,8 @@ import java.util.HashMap;
 public class LoadWordsInCache {
       public static HashMap<String, ArrayList<String>> words = new HashMap<>();
       public LoadWordsInCache() throws FileNotFoundException, IOException {
-          File file = new File("/Users/puneet/Code/AutoComplete/words.txt");
+          String path = System.getProperty("user.dir") + "/words.txt";
+          File file = new File(path);
 
           BufferedReader br = new BufferedReader(new FileReader(file));
 
