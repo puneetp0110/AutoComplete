@@ -13,4 +13,8 @@ For building and running the application you need:
 - Verify that all test cases are passing.
 - Run application.
 
+## Curl command
+curl --location --request GET 'localhost:8080/api/autoComplete/word?prefix=abaxi' \
+--header 'Content-Type: application/json'
+
 
